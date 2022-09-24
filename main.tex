@@ -1,62 +1,88 @@
-% --------------------------------------------------------------
-% This is all preamble stuff that you don't have to worry about.
-% Head down to where it says "Start here"
-% --------------------------------------------------------------
 \documentclass[12pt]{article}
-\usepackage{url}
-\usepackage{floatrow}
-\usepackage[margin=1in]{geometry} 
-\usepackage{amsmath,amsthm,amssymb}
-\usepackage{alltt}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc} 
+\usepackage{amsmath}
 \usepackage{graphicx}
-\usepackage{url}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[toc,page]{appendix}
+\usepackage{wrapfig}
+
+
+\usepackage{comment}
+\usepackage[T1,hyphens]{url}
+%\usepackage{multicol} %for merging columns in a table
+%\usepackage{multirow} %for merging rows in a table
+\usepackage{longtable}
+\usepackage [a4paper]{geometry}
+\usepackage{makecell}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+%\usepackage{biblatex}
+%addbibresource{End/bibliography.bib}
+\usepackage[backend=biber, style= numeric]{biblatex} %moved to one line \nocite{*}
+%\setlength {\marginparwidth }{2cm} %added
+\usepackage{csquotes} %added
+\usepackage{subcaption}%add
+\usepackage{float}     %add
+\usepackage{verbatim}  %add
+\addbibresource{End/bibliography.bib}
+\title{Bibliography management: \texttt{biblatex} package}
+\author{Overleaf}
+\date{ }
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+%\fancyhead[L]{FYS-STK4155}
+\fancyhead[R]{Project 1}
+\usepackage[acronym]{glossaries}
+
+
+\usepackage{float}
+
+\usepackage{color}   %to color links
 \usepackage{hyperref}
-\DeclareFloatFont{tiny}{\tiny}% "scriptsize" is defined by floatrow, "tiny" not
-\floatsetup[table]{font=tiny} 
- 
+\hypersetup{
+    colorlinks, %=true for coloured links
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=blue,
+    linktoc=all,     %set to all for want both sections and subsections linked
+}
+%\makeglossaries                    % Glossary
+%\input{FrontMatter/glossary}
+%**********************************************%
+
 \begin{document}
- 
-% --------------------------------------------------------------
-%                         Start here
-% --------------------------------------------------------------
- 
-%\renewcommand{\qedsymbol}{\filledbox}
- 
-\title{Report Title}%replace X with the appropriate number  CS38220: Professional Issues in the Computing IndustryJob Application Assignment
-\author{Name and subject} %S{\ae}var Ingi Sigurdarson\\ 
-%CS3220 - Professional Issues in the Computing Industry} 
-\date{Date}%9th March 2020}
- 
-\maketitle
 
-\pagebreak
+%**********************************************%
+\include{FrontMatter/TitlePage}     % Front page              
+\include{FrontMatter/Abstract}      % Abstract
+%**********************************************%
+\newpage
+\tableofcontents                    % Contents page
+\newpage
+%\listoffigures                     % List of Figures
+%\newpage
+%\printglossary[type=\acronymtype]  % List of Acronyms
+%\printglossary                     % Acronyms
+%\newpage
+%**********************************************%
 
-
-\tableofcontents
-% write out be more specific
-
-\pagebreak
-
-\section{Section 1}
-\pagebreak
-
-\section{Section 2}
-
-\pagebreak
-
-\section{Section 3}
-\subsection{Subsection 3.1}
-\subsection{Subsection 3.2}
-
-\section{Section 4}
-
-%\nocite{*}
-%\bibliographystyle{IEEEtran}
-%\bibliography{references}
-
-
-% --------------------------------------------------------------
-%     You don't have to mess with anything below this line.
-% --------------------------------------------------------------
+\include{Chapters/Intro}            % Introduction
+\newpage
+\include{Chapters/Method}       
+\newpage
+\include{Chapters/Results}    
+\newpage
+\include{Chapters/Discussion}       % Discussion
+\newpage
+\include{Chapters/Conclusion}       % Conclusion
+\newpage
+\include{End/References}            % Bibliography
+\newpage
+\include{End/Appendices}            % Appendices
+%**********************************************%
 
 \end{document}
